@@ -1,0 +1,23 @@
+- hosts: localhost
+  vars_files:
+    - "{{ ansible_facts['distribution'] }}-{{ ansible_facts['distribution_major_version'] }}.yml"
+  tasks:
+  - name: Install package
+    package:
+            name: "{{ package1 }}"
+            state: present
+
+  - name: installing second package
+    package:
+            name: "{{ package2 }}"
+            state: present
+
+  - name: copy webpage
+    template:
+        dest: "/var/www/html"
+        src: "/root/task2/index.php"
+
+  - name: start service
+    service:
+         name: "{{ service }}"
+         state: started
