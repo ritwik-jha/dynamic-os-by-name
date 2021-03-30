@@ -2,7 +2,7 @@
 
 ## Description
 
-In this project we configure ansible manaegd node using playbook. In the playbook we use variables and these variables are declared in a var_file. 
+In this project we configure ansible managed node using playbook. In the playbook we use variables and these variables are declared in a var_file. 
 The var_files include variables like package names, service name etc. and are named after some os. 
 
 When we run the playbook it retrieves the os of the managed nodes and based on the os the specific var_files are loaded. So that managed node is configured with the packages and have services started as specified in those var_file. We create different var_files for different os and each var_file has different packages and services.
@@ -12,7 +12,7 @@ If the managed node is RedHat then the variables of RedHat-8.yml will be loaded 
 
 ## Theory 
 
-Ansible is a declarative language. We tell ansible what we want to do and ansible figures own it's own how to do it. For this ansible goes to the managed node and explores the node. 
+Ansible is a declarative language. We tell ansible what we want to do and ansible figures on it's own how to do it. For this ansible goes to the managed node and explores the node. 
 It retrieves all the data regarding the node and based on this data it takes appropriate steps. This collection of data is called facts. The first step when any playbook is run is facts collection. 
 
 We use these facts for automating the configuration process without using *when* keyword. 
